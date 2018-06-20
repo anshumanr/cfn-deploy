@@ -58,9 +58,9 @@ module.exports.createClient = (event, context, callback) => {
                 'openid',
             ],
             CallbackURLs: [
-                'https://aws.amazon.com',
+                event.ResourceProperties.RedirectURI,
             ],
-            DefaultRedirectURI: 'https://aws.amazon.com',
+            DefaultRedirectURI: event.ResourceProperties.RedirectURI,
             GenerateSecret: genSec,
             LogoutURLs: [
                 'https://aws.amazon.com',
